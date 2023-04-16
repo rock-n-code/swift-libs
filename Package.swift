@@ -8,22 +8,23 @@ let package = Package(
         .library(
             name: "SwiftLibs",
             targets: [
-                "SwiftLibs"
+                "Core"
             ]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "SwiftLibs",
+            name: "Core",
             dependencies: [
             ]
         ),
         .testTarget(
-            name: "SwiftLibsTests",
+            name: "CoreTests",
             dependencies: [
-                "SwiftLibs"
-            ]
+                "Core"
+            ],
+            path: "Tests/Core"
         ),
     ]
 )
