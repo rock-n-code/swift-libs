@@ -1,12 +1,12 @@
 //
 //  CoordinatorTests.swift
-//  CoordinatorTests
+//  CoordinationTests
 //
 //  Created by Javier Cicchelli on 11/04/2023.
 //  Copyright © 2023 Röck+Cöde. All rights reserved.
 //
 
-import Coordinator
+import Coordination
 import UIKit
 import XCTest
 

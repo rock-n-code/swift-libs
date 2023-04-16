@@ -14,15 +14,16 @@ let package = Package(
         .library(
             name: "SwiftLibs",
             targets: [
-                "Coordinator",
-                "Core"
+                "Coordination",
+                "Core",
+                "Dependencies"
             ]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Coordinator",
+            name: "Coordination",
             dependencies: [],
             exclude: excludePlatforms
         ),
@@ -30,12 +31,16 @@ let package = Package(
             name: "Core",
             dependencies: []
         ),
+        .target(
+            name: "Dependencies",
+            dependencies: []
+        ),
         .testTarget(
-            name: "CoordinatorTests",
+            name: "CoordinationTests",
             dependencies: [
-                "Coordinator"
+                "Coordination"
             ],
-            path: "Tests/Coordinator",
+            path: "Tests/Coordination",
             exclude: excludePlatforms
         ),
         .testTarget(
@@ -44,6 +49,13 @@ let package = Package(
                 "Core"
             ],
             path: "Tests/Core"
+        ),
+        .testTarget(
+            name: "DependenciesTests",
+            dependencies: [
+                "Dependencies"
+            ],
+            path: "Tests/Dependencies"
         ),
     ]
 )

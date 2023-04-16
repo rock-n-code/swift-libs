@@ -1,6 +1,6 @@
 //
 //  Router.swift
-//  Coordinator
+//  Coordination
 //
 //  Created by Javier Cicchelli on 11/04/2023.
 //  Copyright © 2023 Röck+Cöde. All rights reserved.
@@ -13,7 +13,7 @@ import UIKit
 /// This protocol defines how view controllers will be shown and dismissed.
 public protocol Router: AnyObject {
     
-    // MARK: Typealiases
+    // MARK: Type aliases
     
     typealias OnDismissedClosure = () -> Void
     
