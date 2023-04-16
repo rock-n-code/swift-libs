@@ -10,6 +10,12 @@ excludePlatforms = []
 
 let package = Package(
     name: "SwiftLibs",
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6)
+    ],
     products: [
         .library(
             name: "SwiftLibs",
@@ -22,6 +28,11 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
+        // MARK: Targets
+        .target(
+            name: "Communications",
+            dependencies: []
+        ),
         .target(
             name: "Coordination",
             dependencies: [],
@@ -34,6 +45,14 @@ let package = Package(
         .target(
             name: "Dependencies",
             dependencies: []
+        ),
+        // MARK: Test targets
+        .testTarget(
+            name: "CommunicationsTests",
+            dependencies: [
+                "Communications"
+            ],
+            path: "Tests/Communications"
         ),
         .testTarget(
             name: "CoordinationTests",
