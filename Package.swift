@@ -20,9 +20,11 @@ let package = Package(
         .library(
             name: "SwiftLibs",
             targets: [
+                "Communications",
                 "Coordination",
                 "Core",
-                "Dependencies"
+                "Dependencies",
+                "Persistence"
             ]
         ),
     ],
@@ -44,6 +46,10 @@ let package = Package(
         ),
         .target(
             name: "Dependencies",
+            dependencies: []
+        ),
+        .target(
+            name: "Persistence",
             dependencies: []
         ),
         // MARK: Test targets
@@ -75,6 +81,13 @@ let package = Package(
                 "Dependencies"
             ],
             path: "Tests/Dependencies"
+        ),
+        .testTarget(
+            name: "PersistenceTests",
+            dependencies: [
+                "Persistence"
+            ],
+            path: "Tests/Persistence"
         ),
     ]
 )
