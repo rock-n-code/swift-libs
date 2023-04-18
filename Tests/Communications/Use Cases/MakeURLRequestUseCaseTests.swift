@@ -52,6 +52,25 @@ final class MakeURLRequestUseCaseTests: XCTestCase {
         XCTAssertNil(result.httpBody)
     }
     
+    func test_withEndpoint_initialisedWithParameters() throws {
+        // GIVEN
+        let endpoint = TestEndpoint(parameters: [
+            "someParameter": "someValue",
+            "anotherParameter": nil,
+            "otherParameter": "yetAnotherValue"
+        ])
+        
+        // WHEN
+        let result = try makeURLRequest(endpoint: endpoint)
+        
+        // THEN
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.url?.absoluteString, "http://www.something.com/path/to/endpoint?anotherParameter&otherParameter=yetAnotherValue&someParameter=someValue")
+        XCTAssertEqual(result.httpMethod, HTTPRequestMethod.get.rawValue)
+        XCTAssertEqual(result.allHTTPHeaderFields, [:])
+        XCTAssertNil(result.httpBody)
+    }
+    
     func test_withEndpoint_initialisedWithHeaders() throws {
         // GIVEN
         let endpoint = TestEndpoint(headers: [
@@ -100,23 +119,25 @@ private struct TestEndpoint: Endpoint {
     
     let scheme: String = "http"
     let host: String = "www.something.com"
+    let port: Int?
     let path: String = "/path/to/endpoint"
+    let parameters: Parameters
     let method: HTTPRequestMethod = .get
-    
-    var port: Int?
-    var headers: [String : String]
-    var body: Data?
+    let headers: Headers
+    let body: Data?
 
     // MARK: Initialisers
     
     init(
         port: Int? = nil,
-        headers: [String : String] = [:],
+        parameters: Parameters = [:],
+        headers: Headers = [:],
         body: Data? = nil
     ) {
         self.port = port
-        self.body = body
+        self.parameters = parameters
         self.headers = headers
+        self.body = body
     }
 
 }

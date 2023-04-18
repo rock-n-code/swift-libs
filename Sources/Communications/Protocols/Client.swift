@@ -27,9 +27,4 @@ public protocol Client {
         as model: Model.Type
     ) async throws -> Model
     
-    /// Makes a request to a remote location based on a given endpoint and expects to return an original, uncasted response.
-    /// - Parameter endpoint: The endpoint for which to make a remote call.
-    /// - Returns: An original data response from a call to a remote endpoint.
-    @discardableResult func request(endpoint: some Endpoint) async throws -> Data
-
 }

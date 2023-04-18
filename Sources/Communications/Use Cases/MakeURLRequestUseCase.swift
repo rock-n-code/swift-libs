@@ -35,6 +35,12 @@ public struct MakeURLRequestUseCase {
             urlComponents.port = port
         }
         
+        if !endpoint.parameters.isEmpty {
+            urlComponents.queryItems = endpoint.parameters
+                .map(URLQueryItem.init)
+                .sorted(by: { $0.name < $1.name })
+        }
+
         guard let url = urlComponents.url else {
             throw MakeURLRequestError.urlNotCreated
         }
@@ -49,10 +55,3 @@ public struct MakeURLRequestUseCase {
     }
 
 }
-
-// MARK: - Errors
-
-enum MakeURLRequestError: Error {
-    case urlNotCreated
-}
-
