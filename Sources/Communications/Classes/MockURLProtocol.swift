@@ -17,6 +17,7 @@ public class MockURLProtocol: URLProtocol {
     
     // MARK: Properties
     
+    /// The dictionary in which the mock requests with its respective mock responses will be injected.
     public static var mockData: [MockURLRequest: MockURLResponse] = [:]
     
     // MARK: Functions
@@ -75,8 +76,22 @@ public class MockURLProtocol: URLProtocol {
 
 ///  This model includes the data to be injected into an specific URL at the time of mocking its request.
 public struct MockURLRequest: Hashable {
+    
+    // MARK: Properties
+    
     public let method: HTTPRequestMethod
     public let url: URL
+    
+    // MARK: Initialisers
+    
+    public init(
+        method: HTTPRequestMethod,
+        url: URL
+    ) {
+        self.method = method
+        self.url = url
+    }
+
 }
 
 ///  This model includes the data to be injected into an specific URL at the time of mocking its response.
