@@ -10,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
 import UIKit
 #endif
 
@@ -23,7 +23,7 @@ public protocol Router: AnyObject {
     
     // MARK: Functions
     
-    #if canImport(UIKit)
+    #if canImport(UIKit) && !os(watchOS)
     /// Present a view controller animatedly or not, depending on the given `animated` parameter, and also pass a closure that should be called on dismissal.
     /// - Parameters:
     ///   - viewController: A `UIViewController` view controller instance to present.
@@ -42,7 +42,7 @@ public protocol Router: AnyObject {
     
 }
 
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
 // MARK: - Router+Implementations
 
 public extension Router {
