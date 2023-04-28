@@ -7,11 +7,11 @@
 
 # SwiftLibs
 
-This package contains the core building blocks that we, [Röck+Cöde](https://rock-n-code.com), usually use to build any kind of application written in the [Swift programming language](https://www.swift.org/documentation/).
+This package contains the core building blocks that we, [Röck+Cöde](https://rock-n-code.com), usually use to build our libraries and application written in the [Swift programming language](https://www.swift.org/documentation/).
 
 ## Libraries
 
-This package contains several libraries which a developer can also use in their own codebase, and these libraries are grouped by a certain concern or purpose.
+This package contains several libraries which can be imported, and these libraries are grouped by a certain concern, feature or purpose.
 
 To provide further details about the libraries included in this package:
 * `Communications`: protocols, enumerations and a ready-to-use mock url class to build remote API services;
@@ -37,7 +37,7 @@ In the intended `Package.swift` file, it is required to add the following depend
 ```swift
 dependencies: [
     // ...
-    .package(url: "https://github.com/rock-n-code/swift-libs.git", from: "0.1.3")
+    .package(url: "https://github.com/rock-n-code/swift-libs.git", from: "0.1.5")
     // ...
 ],
 ```
@@ -66,13 +66,13 @@ In an opened Xcode project, it is required to follow these steps to install the 
 4. press on the *+* (plus) button to add dependencies to the project;
 5. enter the URL `https://github.com/rock-n-code/swift-libs.git` into the *Search or Enter Package URL* located in the upper right corner;
 6. select the retrieved option;
-7. define the dependency rule (the *Up to Next Major Version* option and the *0.1.3* text are recommended);
+7. define the dependency rule (the *Up to Next Major Version* option and the *0.1.5* text are recommended);
 8. select the target to which the dependency will be applied (if required);
 9. wait for the package to be resolved and included in the project;
 10. now you should be ready to start using this package!
 
 ### Other considerations
 
-This library is fully supported on Apple platforms only for the time being: *iOS*, *macOS*, *tvOS*, and *watchOS*. Support for other platforms such as *Linux* or *Windows* might be added in the future, depending on the type of changes those platforms require but this needs to be researched first. 
+This library is fully supported on Apple platforms: *iOS*, *macOS*, *tvOS*, and *watchOS*. In addition, basic support for *Linux* platform has been added as well, but it is rather limited for the time being, but it is just a matter of time as the Foundation framework is [moving towards cross-platform support](https://www.swift.org/blog/foundation-preview-now-available). 
 
 ⚠️ Please notice that this library only supports the [Swift Package Manager](https://www.swift.org/package-manager/), and that support for other dependency managers such as *Cocoapods* and *Carthage* has not been prioritised. 

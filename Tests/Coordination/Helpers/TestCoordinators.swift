@@ -10,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
 import Coordination
 import UIKit
 
