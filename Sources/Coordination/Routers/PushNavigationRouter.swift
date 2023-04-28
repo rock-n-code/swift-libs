@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS)
 import UIKit
 
 /// This class is responsible for pushing view controllers into a navigation controller, as it is a concrete implementation of the `Router` protocol.
@@ -66,3 +67,4 @@ extension PushNavigationRouter: Router {
     }
     
 }
+#endif

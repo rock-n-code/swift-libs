@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if canImport(Combine) && canImport(CoreData)
 import Combine
 import CoreData
 
@@ -167,3 +168,4 @@ public enum Change: Hashable {
     case section(SectionUpdate)
     case object(ObjectUpdate)
 }
+#endif

@@ -11,6 +11,7 @@
 //===----------------------------------------------------------------------===//
 
 import CoreData
+import Foundation
 import Persistence
 
 struct TestPersistenceService {

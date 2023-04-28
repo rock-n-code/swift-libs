@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS)
 import UIKit
 
 /// This class is responsible for populating the window of an application.
@@ -45,3 +46,4 @@ public class WindowRouter: Router {
     }
     
 }
+#endif

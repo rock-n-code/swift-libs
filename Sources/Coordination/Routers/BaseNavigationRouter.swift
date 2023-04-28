@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS)
 import UIKit
 
 /// This is a base class for the `NavigationRouter` concrete router implementations.
@@ -70,3 +71,4 @@ extension BaseNavigationRouter: UINavigationControllerDelegate {
     }
 
 }
+#endif

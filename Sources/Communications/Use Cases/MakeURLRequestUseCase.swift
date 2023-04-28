@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
 import Foundation
 
 /// This use case generate a url request out of a given endpoint.
@@ -55,3 +56,4 @@ public struct MakeURLRequestUseCase {
     }
 
 }
+#endif

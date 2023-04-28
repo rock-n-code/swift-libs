@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if canImport(UIKit)
 import Coordination
 import UIKit
 
@@ -108,3 +109,4 @@ class SpyRouter: Router {
 
 class SomeViewController: UIViewController {}
 class SomeOtherViewController: UIViewController {}
+#endif

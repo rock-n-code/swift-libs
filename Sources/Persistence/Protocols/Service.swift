@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if canImport(CoreData)
 import CoreData
 
 public protocol Service {
@@ -38,3 +39,4 @@ public protocol Service {
     func save(childContext context: NSManagedObjectContext) throws 
     
 }
+#endif

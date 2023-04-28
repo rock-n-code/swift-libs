@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS)
 import UIKit
 
 /// This class is responsible for showing view controllers modally, as it is a concrete implementation of the `Router` protocol.
@@ -88,3 +89,4 @@ private extension ModalNavigationRouter {
     }
     
 }
+#endif

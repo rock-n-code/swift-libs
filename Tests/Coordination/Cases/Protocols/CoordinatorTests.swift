@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if canImport(UIKit)
 import Coordination
 import UIKit
 import XCTest
@@ -139,3 +140,4 @@ final class CoordinatorTests: XCTestCase {
     }
 
 }
+#endif
