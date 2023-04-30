@@ -37,7 +37,7 @@ In the intended `Package.swift` file, it is required to add the following depend
 ```swift
 dependencies: [
     // ...
-    .package(url: "https://github.com/rock-n-code/swift-libs.git", from: "0.1.5")
+    .package(url: "https://github.com/rock-n-code/swift-libs.git", from: "0.1.7")
     // ...
 ],
 ```
@@ -66,7 +66,7 @@ In an opened Xcode project, it is required to follow these steps to install the 
 4. press on the *+* (plus) button to add dependencies to the project;
 5. enter the URL `https://github.com/rock-n-code/swift-libs.git` into the *Search or Enter Package URL* located in the upper right corner;
 6. select the retrieved option;
-7. define the dependency rule (the *Up to Next Major Version* option and the *0.1.5* text are recommended);
+7. define the dependency rule (the *Up to Next Major Version* option and the *0.1.7* text are recommended);
 8. select the target to which the dependency will be applied (if required);
 9. wait for the package to be resolved and included in the project;
 10. now you should be ready to start using this package!

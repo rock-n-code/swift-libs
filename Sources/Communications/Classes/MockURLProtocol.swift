@@ -10,8 +10,11 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
 import Foundation
+
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// This class overrides the `URLProtocol` protocol used by the `URLSession` to handle the loading of protocol-specific URL data so it is possible to mock URL response for testing purposes.
 public class MockURLProtocol: URLProtocol {
@@ -117,4 +120,3 @@ public struct MockURLResponse {
     }
 
 }
-#endif
