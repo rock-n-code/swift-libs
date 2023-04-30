@@ -10,10 +10,13 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
 import Communications
 import Foundation
 import XCTest
+
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 final class MakeURLRequestUseCaseTests: XCTestCase {
 
@@ -111,35 +114,3 @@ final class MakeURLRequestUseCaseTests: XCTestCase {
     }
 
 }
-
-// MARK: - TestEndpoint
-
-private struct TestEndpoint: Endpoint {
-
-    // MARK: Properties
-    
-    let scheme: String = "http"
-    let host: String = "www.something.com"
-    let port: Int?
-    let path: String = "/path/to/endpoint"
-    let parameters: Parameters
-    let method: HTTPRequestMethod = .get
-    let headers: Headers
-    let body: Data?
-
-    // MARK: Initialisers
-    
-    init(
-        port: Int? = nil,
-        parameters: Parameters = [:],
-        headers: Headers = [:],
-        body: Data? = nil
-    ) {
-        self.port = port
-        self.parameters = parameters
-        self.headers = headers
-        self.body = body
-    }
-
-}
-#endif
