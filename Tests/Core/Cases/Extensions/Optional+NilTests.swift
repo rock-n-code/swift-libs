@@ -13,47 +13,54 @@
 import Core
 import XCTest
 
-final class String_EmptyTests: XCTestCase {
+final class Optional_NilTests: XCTestCase {
 
+    // MARK: Properties
+    
+    private var optional: Int?
+
+    private var result: Bool!
+    
     // MARK: Tests
-
-    func test_empty() {
+    
+    func test_isNil_whenOptionalHasNotBeenSet() {
         // GIVEN
-        let string = String.empty
-        
         // WHEN
+        result = optional.isNil
+        
         // THEN
-        XCTAssertEqual(string, "")
+        XCTAssertTrue(result)
     }
     
-    func test_isNotEmpty_withEmptyString() {
+    func test_isNil_whenOptionalHasBeenSet() {
         // GIVEN
-        let string = String.empty
+        optional = 0
         
         // WHEN
-        let result = string.isNotEmpty
+        result = optional.isNil
         
         // THEN
         XCTAssertFalse(result)
     }
     
-    func test_isNotEmpty_withFilledString() {
+    func test_isNotNil_whenOptionalHasNotBeenSet() {
         // GIVEN
-        let string = String.Test.string
+        // WHEN
+        result = optional.isNotNil
+        
+        // THEN
+        XCTAssertFalse(result)
+    }
+    
+    func test_isNotNil_whenOptionalHasBeenSet() {
+        // GIVEN
+        optional = 0
         
         // WHEN
-        let result = string.isNotEmpty
+        result = optional.isNotNil
         
         // THEN
         XCTAssertTrue(result)
     }
 
-}
-
-// MARK: - String+Constants
-
-private extension String {
-    enum Test {
-        static let string = "Some test string..."
-    }
 }

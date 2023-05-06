@@ -10,16 +10,25 @@
 //
 //===----------------------------------------------------------------------===//
 
-public extension String {
-    
-    // MARK: Constants
-    
-    /// A string that represents an empty string.
-    static let empty = ""
-    
-    // MARK: Properties
+import Core
+import XCTest
 
-    /// A Boolean value indicating whether a string is not empty.
-    var isNotEmpty: Bool { !isEmpty }
+final class TimeZone_ZoneTests: XCTestCase {
+
+    // MARK: Properties
     
+    private var timeZone: TimeZone!
+
+    // MARK: Tests
+    
+    func test_gmt() {
+        // GIVEN
+        // WHEN
+        timeZone = .gmt
+        
+        // THEN
+        XCTAssertEqual(timeZone.identifier, "GMT")
+        XCTAssertEqual(timeZone.secondsFromGMT(), 0)
+    }
+
 }

@@ -10,16 +10,14 @@
 //
 //===----------------------------------------------------------------------===//
 
-public extension String {
-    
-    // MARK: Constants
-    
-    /// A string that represents an empty string.
-    static let empty = ""
+public extension Optional {
     
     // MARK: Properties
-
-    /// A Boolean value indicating whether a string is not empty.
-    var isNotEmpty: Bool { !isEmpty }
+    
+    /// A Boolean value indicating whether an optional has not been set.
+    var isNil: Bool { self == nil }
+    
+    /// A Boolean value indicating whether an optional has been set.
+    var isNotNil: Bool { !isNil }
     
 }
