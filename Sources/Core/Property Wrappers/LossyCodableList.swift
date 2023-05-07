@@ -10,8 +10,10 @@
 //
 //===----------------------------------------------------------------------===//
 
+/// This struct (that could also be used as a property wrapper as well) provides a generic type that acts as a thin wrapper around an array of `Elements` instances to allow a lossy decoding and or encoding process.
+///
+/// This implementation is heavily influenced by this [article](https://www.swiftbysundell.com/articles/ignoring-invalid-json-elements-codable/).
 @propertyWrapper
-/// This property wrapper provides a generic type that acts as a thin wrapper around an array of `Elements` instances to allow a lossy decoding and or encoding process.
 public struct LossyCodableList<Element> {
     
     // MARK: Properties
@@ -26,7 +28,7 @@ public struct LossyCodableList<Element> {
     
     // MARK: Initialisers
     
-    /// Initialises this property wrapper.
+    /// Initialises this struct.
     public init() {
         self.elements = []
     }
