@@ -91,6 +91,7 @@ targetsPackage.append(contentsOf: [
 
 let package = Package(
     name: .Package.name,
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v15),
         .macOS(.v12),

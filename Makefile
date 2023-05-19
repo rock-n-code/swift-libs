@@ -14,6 +14,14 @@ override platform?=${DOCKER_IMAGE_PLATFORM}
 override config?=${SWIFT_BUILD_CONFIGURATION}
 override clean?=${DOCKER_IMAGE_CLEAN}
 
+# --- IDE ---
+
+xcode: ## Open this package in Xcode.
+	@open -a Xcode Package.swift
+
+vscode: ## Open this package with Visual Studio Code.
+	@code .
+
 # --- DEPENDENCIES ---
 
 outdated: ## List the package dependencies that can be updated.
@@ -69,11 +77,6 @@ reset: ## Reset the build folder of the package.
 flush-images: ## Flush all outstanding Swift docker images.
 	@docker images \
 		--all | grep ${DOCKER_IMAGE_NAME} | awk '{print $$3}' | xargs docker rmi --force
-
-# --- MISCELLANEOUS ---
-
-xcode: ## Open this package in Xcode.
-	@open -a Xcode Package.swift
 
 # --- HELP ---
 
