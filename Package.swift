@@ -96,7 +96,7 @@ let package = Package(
         .iOS(.v15),
         .macOS(.v12),
         .tvOS(.v15),
-        .watchOS(.v8)
+        .watchOS(.v8),
     ],
     products: [
         .library(
@@ -104,7 +104,12 @@ let package = Package(
             targets: targetsLibrary
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(
+            url: "https://github.com/apple/swift-docc-plugin",
+            from: "1.0.0"
+        ),
+    ],
     targets: targetsPackage
 )
 
