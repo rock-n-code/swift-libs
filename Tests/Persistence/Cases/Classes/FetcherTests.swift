@@ -11,7 +11,7 @@
 //===----------------------------------------------------------------------===//
 
 import Combine
-import Persistence
+import SwiftLibsPersistence
 import XCTest
 
 final class FetcherTests: XCTestCase {

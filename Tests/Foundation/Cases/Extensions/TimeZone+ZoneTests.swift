@@ -10,25 +10,25 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Foundation
-import SwiftLibsPersistence
+import SwiftLibsFoundation
 import XCTest
 
-final class URL_DevicesTests: XCTestCase {
-    
+final class TimeZone_ZoneTests: XCTestCase {
+
     // MARK: Properties
     
-    private var url: URL!
+    private var timeZone: TimeZone!
+
+    // MARK: Tests
     
-    // MARK: - Tests
-    
-    func test_bitBucket() {
+    func test_gmt() {
         // GIVEN
         // WHEN
-        url = .bitBucket
+        timeZone = .gmt
         
         // THEN
-        XCTAssertEqual(url.absoluteString, "file:///dev/null")
+        XCTAssertEqual(timeZone.identifier, "GMT")
+        XCTAssertEqual(timeZone.secondsFromGMT(), 0)
     }
-    
+
 }

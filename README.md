@@ -14,11 +14,11 @@ This package contains the core building blocks that we, [Röck+Cöde](https://ro
 This package contains several libraries which can be imported, and these libraries are grouped by a certain concern, feature or purpose.
 
 To provide further details about the libraries included in this package:
-* `Communications`: protocols, enumerations and a ready-to-use mock url class to build remote API services;
-* `Coordination`: protocols to implement the [Coordinator pattern](https://khanlou.com/2015/01/the-coordinator/) and some ready-to-use platform-specific concrete routers; 
-* `Core`: extensions we usually add to the base layer functionality and primitive types provided by the [Swift standard library](https://https://www.swift.org/documentation/#standard-library);
-* `Dependencies`: a ready-to-use, simple [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) mechanism that levers heavily on the [dynamic property wrappers](https://www.hackingwithswift.com/plus/intermediate-swiftui/creating-a-custom-property-wrapper-using-dynamicproperty) provided by the [Swift programming language](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/properties/#Projecting-a-Value-From-a-Property-Wrapper);
-* `Persistence` (*available for Apple platforms only*): protocols, extensions and a ready-to-use fetcher class to simplify the building of the [CoreData](https://developer.apple.com/documentation/coredata) persistence layer;
+* `SwiftLibsCommunication`: protocols, enumerations and a ready-to-use mock url class to build remote API services;
+* `SwiftLibsCoordination`: protocols to implement the [Coordinator pattern](https://khanlou.com/2015/01/the-coordinator/) and some ready-to-use platform-specific concrete routers; 
+* `SwiftLibsDependency`: a ready-to-use, simple [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) mechanism that levers heavily on the [dynamic property wrappers](https://www.hackingwithswift.com/plus/intermediate-swiftui/creating-a-custom-property-wrapper-using-dynamicproperty) provided by the [Swift programming language](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/properties/#Projecting-a-Value-From-a-Property-Wrapper);
+* `SwiftLibsFoundation`: extensions we usually add to the base layer functionality and primitive types provided by the [Swift standard library](https://https://www.swift.org/documentation/#standard-library);
+* `SwiftLibsPersistence` (*available for Apple platforms only*): protocols, extensions and a ready-to-use fetcher class to simplify the building of the [CoreData](https://developer.apple.com/documentation/coredata) persistence layer;
 
 ## Installation
 
@@ -37,7 +37,7 @@ In the intended `Package.swift` file, it is required to add the following depend
 ```swift
 dependencies: [
     // ...
-    .package(url: "https://github.com/rock-n-code/swift-libs.git", from: "0.1.7")
+    .package(url: "https://github.com/rock-n-code/swift-libs.git", from: "0.2.0")
     // ...
 ],
 ```
@@ -66,7 +66,7 @@ In an opened Xcode project, it is required to follow these steps to install the 
 4. press on the *+* (plus) button to add dependencies to the project;
 5. enter the URL `https://github.com/rock-n-code/swift-libs.git` into the *Search or Enter Package URL* located in the upper right corner;
 6. select the retrieved option;
-7. define the dependency rule (the *Up to Next Major Version* option and the *0.1.7* text are recommended);
+7. define the dependency rule (the *Up to Next Major Version* option and the *0.2.0* text are recommended);
 8. select the target to which the dependency will be applied (if required);
 9. wait for the package to be resolved and included in the project;
 10. now you should be ready to start using this package!

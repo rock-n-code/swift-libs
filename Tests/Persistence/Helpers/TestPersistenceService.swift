@@ -12,7 +12,7 @@
 
 import CoreData
 import Foundation
-import Persistence
+import SwiftLibsPersistence
 
 struct TestPersistenceService {
     

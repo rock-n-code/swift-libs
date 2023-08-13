@@ -10,25 +10,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Foundation
-import SwiftLibsPersistence
-import XCTest
+import SwiftLibsFoundation
 
-final class URL_DevicesTests: XCTestCase {
-    
-    // MARK: Properties
-    
-    private var url: URL!
-    
-    // MARK: - Tests
-    
-    func test_bitBucket() {
-        // GIVEN
-        // WHEN
-        url = .bitBucket
-        
-        // THEN
-        XCTAssertEqual(url.absoluteString, "file:///dev/null")
-    }
-    
+struct TestCodableList: Codable {
+    @LossyCodableList var items: [TestCodable]
 }

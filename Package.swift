@@ -14,56 +14,56 @@ import PackageDescription
 // MARK: - Variables
 
 private var targetsLibrary: [String] = [
-    .Target.communications,
+    .Target.communication,
     .Target.coordination,
-    .Target.core,
-    .Target.dependencies,
+    .Target.foundation,
+    .Target.dependency,
 ]
 
 private var targetsPackage: [Target] = [
     .target(
-        name: .Target.communications,
-        dependencies: []
+        name: .Target.communication,
+        path: "Libraries/Communication"
     ),
     .target(
         name: .Target.coordination,
-        dependencies: []
+        path: "Libraries/Coordination"
     ),
     .target(
-        name: .Target.core,
-        dependencies: []
+        name: .Target.foundation,
+        path: "Libraries/Foundation"
     ),
     .target(
-        name: .Target.dependencies,
-        dependencies: []
+        name: .Target.dependency,
+        path: "Libraries/Dependency"
     ),
     .testTarget(
-        name: "CommunicationsTests",
+        name: .Target.communication.tests,
         dependencies: [
-            .init(stringLiteral: .Target.communications)
+            .init(stringLiteral: .Target.communication)
         ],
-        path: "Tests/Communications"
+        path: "Tests/Communication"
     ),
     .testTarget(
-        name: "CoordinationTests",
+        name: .Target.coordination.tests,
         dependencies: [
             .init(stringLiteral: .Target.coordination)
         ],
         path: "Tests/Coordination"
     ),
     .testTarget(
-        name: "CoreTests",
+        name: .Target.foundation.tests,
         dependencies: [
-            .init(stringLiteral: .Target.core)
+            .init(stringLiteral: .Target.foundation)
         ],
-        path: "Tests/Core"
+        path: "Tests/Foundation"
     ),
     .testTarget(
-        name: "DependenciesTests",
+        name: .Target.dependency.tests,
         dependencies: [
-            .init(stringLiteral: .Target.dependencies)
+            .init(stringLiteral: .Target.dependency)
         ],
-        path: "Tests/Dependencies"
+        path: "Tests/Dependency"
     ),
 ]
 
@@ -72,10 +72,10 @@ targetsLibrary.append(.Target.persistence)
 targetsPackage.append(contentsOf: [
     .target(
         name: .Target.persistence,
-        dependencies: []
+        path: "Libraries/Persistence"
     ),
     .testTarget(
-        name: "PersistenceTests",
+        name: .Target.persistence.tests,
         dependencies: [
             .init(stringLiteral: .Target.persistence)
         ],
@@ -100,7 +100,7 @@ let package = Package(
     ],
     products: [
         .library(
-            name: .Package.name,
+            name: .Library.name,
             targets: targetsLibrary
         ),
     ],
@@ -112,14 +112,26 @@ let package = Package(
 
 private extension String {
     enum Package {
+        static let name = "swift-libs"
+    }
+    
+    enum Library {
         static let name = "SwiftLibs"
     }
 
     enum Target {
-        static let communications = "Communications"
-        static let coordination = "Coordination"
-        static let core = "Core"
-        static let dependencies = "Dependencies"
-        static let persistence = "Persistence"
+        static let communication = "SwiftLibsCommunication"
+        static let coordination = "SwiftLibsCoordination"
+        static let foundation = "SwiftLibsFoundation"
+        static let dependency = "SwiftLibsDependency"
+        static let persistence = "SwiftLibsPersistence"
+    }
+}
+
+// MARK: - String+Computed
+
+private extension String {
+    var tests: String {
+        self + "Tests"
     }
 }
