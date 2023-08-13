@@ -126,7 +126,7 @@ generate-index-start:
 	@echo "<ul>" >> ${DOCC_GITHUB_INDEX}
 
 generate-index-link:
-	@echo "<li><a href=\"${DOCC_GITHUB_BASE_URL}${SWIFT_TARGET_COMPONENT}\" target=\"_self\"><code>${SWIFT_TARGET_NAME}</code> library</a></li>" >> ${DOCC_GITHUB_INDEX}
+	@echo "<li><a href=\"${DOCC_GITHUB_BASE_URL}${SWIFT_TARGET_COMPONENT}\" target=\"_self\"><code>${SWIFT_TARGET_NAME}</code> library docs</a></li>" >> ${DOCC_GITHUB_INDEX}
 
 generate-index-finish:
 	@echo "</ul>" >> ${DOCC_GITHUB_INDEX}
