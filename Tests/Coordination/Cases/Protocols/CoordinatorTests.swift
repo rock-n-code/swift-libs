@@ -11,7 +11,7 @@
 //===----------------------------------------------------------------------===//
 
 #if canImport(UIKit) && !os(watchOS)
-import Coordination
+import SwiftLibsCoordination
 import UIKit
 import XCTest
 
